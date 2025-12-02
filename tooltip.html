@@ -16,11 +16,11 @@
     <!-- NAVBAR RESPONSIVE -->
     <nav class="navbar">
         <div class="nav-container">
-            <span class="nav-title">Menú</span>
+            <div class="nav-logo">UI</div>
             <div class="hamburger" id="hamburger">☰</div>
         </div>
 
-        <ul id="nav-links">
+        <ul class="nav-menu">
             <li><a href="index.html">Inicio</a></li>
             <li><a href="botones.html">Botones</a></li>
             <li><a href="tarjetas.html">Tarjetas</a></li>
@@ -30,6 +30,16 @@
             <li class="active"><a href="tooltip.html">Tooltip</a></li>
         </ul>
     </nav>
+
+    <!-- JS PARA HAMBURGUESA -->
+    <script>
+        const hamburger = document.getElementById("hamburger");
+        const navMenu = document.querySelector(".nav-menu");
+
+        hamburger.addEventListener("click", () => {
+            navMenu.classList.toggle("active");
+        });
+    </script>
 
     <!-- ENCABEZADO DE PÁGINA -->
     <header class="page-header">
@@ -95,16 +105,6 @@
         </div>
 
     </main>
-
-    <!-- SCRIPT MENÚ -->
-    <script>
-        const hamburger = document.getElementById("hamburger");
-        const navLinks = document.getElementById("nav-links");
-
-        hamburger.addEventListener("click", () => {
-            navLinks.classList.toggle("show-menu");
-        });
-    </script>
 
 </body>
 </html>
