@@ -8,22 +8,17 @@
 </head>
 <body>
 
-    <!-- ======= ENCABEZADO SUPERIOR ======= -->
     <header class="top-header">
         Componentes de Interfaz de Usuario (UI)
     </header>
 
-    <!-- ======= NAVBAR RESPONSIVE ======= -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">UI</div>
-            <div class="hamburger" id="hamburger">
-                ☰
-            </div>
+            <div class="hamburger" id="hamburger">☰</div>
         </div>
 
-        <!-- Menú con ID agregado para JS -->
-        <ul class="nav-menu" id="nav-links">
+        <ul class="nav-menu">
             <li><a href="index.html">Inicio</a></li>
             <li><a href="botones.html">Botones</a></li>
             <li><a href="tarjetas.html">Tarjetas</a></li>
@@ -34,23 +29,11 @@
         </ul>
     </nav>
 
-    <!-- ======= JS PARA HAMBURGUESA ======= -->
-    <script>
-        const hamburger = document.getElementById("hamburger");
-        const navMenu = document.getElementById("nav-links"); // cambiado para usar ID
-
-        hamburger.addEventListener("click", () => {
-            navMenu.classList.toggle("show"); // coincide con tu CSS
-        });
-    </script>
-
-    <!-- ======= ENCABEZADO DE PÁGINA ======= -->
     <header class="page-header">
         <h1>Componentes de UI: Acordeón</h1>
         <p>Aquí se mostrará la información organizada en acordeones.</p>
     </header>
 
-    <!-- ======= CONTENIDO ======= -->
     <main class="acordeon-container">
 
         <div class="acordeon-item">
@@ -97,9 +80,8 @@
 
     </main>
 
-    <!-- ======= JS PARA ACORDEÓN ======= -->
-    <script src="js/main.js"></script> <!-- usar tu JS completo que incluye acordeón y modales -->
+    <!-- JS unificado para hamburguesa, modales y acordeón -->
+    <script src="js/main.js"></script>
 
 </body>
 </html>
-
