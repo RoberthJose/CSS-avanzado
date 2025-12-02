@@ -38,6 +38,7 @@ closeButtons.forEach(btn => {
     });
 });
 
+// Cerrar modal al hacer click fuera del contenido
 modals.forEach(modal => {
     modal.addEventListener('click', e => {
         if (e.target === modal) {
