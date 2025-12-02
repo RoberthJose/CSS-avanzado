@@ -8,24 +8,17 @@
 </head>
 <body>
 
-    <!-- ======= ENCABEZADO SUPERIOR ======= -->
     <header class="top-header fade-in">
         Componentes de Interfaz de Usuario (UI)
     </header>
 
-    <!-- ======= NAVBAR RESPONSIVE ======= -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">UI</div>
-
-            <!-- Ícono hamburguesa -->
-            <div class="hamburger" id="hamburger">
-                ☰
-            </div>
+            <div class="hamburger" id="hamburger">☰</div>
         </div>
 
-        <!-- Menú con ID agregado para JS -->
-        <ul class="nav-menu" id="nav-links">
+        <ul class="nav-menu">
             <li><a href="index.html">Inicio</a></li>
             <li><a href="botones.html">Botones</a></li>
             <li><a href="tarjetas.html">Tarjetas</a></li>
@@ -36,34 +29,20 @@
         </ul>
     </nav>
 
-    <!-- ======= JS PARA HAMBURGUESA ======= -->
-    <script>
-        const hamburger = document.getElementById('hamburger');
-        const navMenu = document.getElementById('nav-links'); // cambiado para usar ID
-
-        hamburger.addEventListener('click', () => {
-            navMenu.classList.toggle('show'); // coincide con tu CSS
-        });
-    </script>
-
-    <!-- ======= ENCABEZADO DE LA PÁGINA ======= -->
     <header class="page-header fade-in-up">
         <h1>Modal</h1>
         <p>Los modales son ventanas emergentes que permiten mostrar información, confirmaciones o advertencias sin abandonar la página.</p>
     </header>
 
-    <!-- ======= CONTENIDO ======= -->
     <section class="content-section fade-up">
         <h2>Ejemplos de Modales</h2>
 
-        <!-- ======= BOTONES PARA ABRIR MODALES ======= -->
         <div class="botones-container">
             <button class="open-modal" data-modal="modal1">Abrir Modal de Información</button>
             <button class="open-modal" data-modal="modal2">Abrir Modal de Confirmación</button>
             <button class="open-modal" data-modal="modal3">Abrir Modal de Advertencia</button>
         </div>
 
-        <!-- ====== MODAL 1: Informativo ====== -->
         <div class="modal fade" id="modal1">
             <div class="modal-content">
                 <h3>Modal Informativo</h3>
@@ -72,7 +51,6 @@
             </div>
         </div>
 
-        <!-- ====== MODAL 2: Confirmación ====== -->
         <div class="modal zoom" id="modal2">
             <div class="modal-content">
                 <h3>Modal de Confirmación</h3>
@@ -82,7 +60,6 @@
             </div>
         </div>
 
-        <!-- ====== MODAL 3: Advertencia ====== -->
         <div class="modal slide" id="modal3">
             <div class="modal-content">
                 <h3>Modal de Advertencia</h3>
@@ -93,8 +70,6 @@
 
     </section>
 
-    <!-- ======= ENLACE AL JS ======= -->
-    <script src="js/main.js"></script>
+    <script src="js/main.js"></script> <!-- JS unificado -->
 </body>
 </html>
-
