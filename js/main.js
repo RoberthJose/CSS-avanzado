@@ -10,6 +10,16 @@ if (hamburger && navMenu) {
     });
 }
 
+// Cerrar menu al hacer click en un enlace (móvil)
+const navLinks = document.querySelectorAll('.nav-menu li a');
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        if (navMenu.classList.contains('show')) {
+            navMenu.classList.remove('show');
+        }
+    });
+});
+
 // ============================
 // MODALES
 // ============================
@@ -94,18 +104,6 @@ acordeonButtons.forEach((btn, index) => {
                 content.style.height = content.scrollHeight + "px";
             });
             resizeObserver.observe(content);
-        }
-    });
-});
-
-// ============================
-// OPCIONAL: CERRAR MENU AL HACER CLICK EN UN ENLACE (MÓVIL)
-// ============================
-const navLinks = document.querySelectorAll('.nav-menu li a');
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        if (navMenu.classList.contains('show')) {
-            navMenu.classList.remove('show');
         }
     });
 });
