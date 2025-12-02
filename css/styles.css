@@ -822,194 +822,65 @@ body {
 }
 
 /* =========================
-   MEDIA QUERIES COMPLETAS
+   NAVBAR RESPONSIVE REAL
 ========================= */
 
+/* Contenedor del título + hamburguesa */
+.nav-container {
+    display: none; 
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background: #222;
+    color: #fff;
+    font-size: 18px;
+}
+
+/* Icono hamburguesa */
+.hamburger {
+    font-size: 25px;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Ocultar menú al inicio en móviles */
+#nav-links {
+    display: flex;
+    transition: max-height 0.3s ease-in-out;
+}
+
 /* =========================
-   TABLETS
+   TABLETS Y MÓVILES
 ========================= */
 @media (max-width: 992px) {
 
-    /* Navbar */
+    .nav-container {
+        display: flex; /* Mostrar título + hamburguesa */
+    }
+
     .navbar ul {
         flex-direction: column;
-        gap: 15px;
         text-align: center;
+        width: 100%;
+        background: #222;
+        max-height: 0;
+        overflow: hidden;
+        padding: 0;
+        margin: 0;
     }
 
-    /* Tarjetas */
-    .tarjetas-container {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-    }
-
-    /* Botones de modales */
-    .botones-container {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    /* Formulario */
-    .content-section {
-        width: 90%;
-        padding: 25px 20px;
-    }
-
-    /* Acordeón */
-    .acordeon-container {
-        width: 95%;
-    }
-
-    .acordeon-btn {
-        font-size: 17px;
-        padding: 14px;
-    }
-
-    .acordeon-contenido {
-        padding: 14px;
-    }
-
-    /* Tooltips */
-    .tooltip img {
-        width: 100px;
-        height: 100px;
-    }
-
-    .tooltiptext {
-        width: 200px;
-        font-size: 14px;
-    }
-
-    /* Modales */
-    .modal-content {
-        width: 80%;
-        padding: 20px 20px;
-    }
-
-    .modal-content h3 {
-        font-size: 20px;
-    }
-
-    .modal-content p {
-        font-size: 15px;
-    }
-
-    .modal-content button {
-        padding: 8px 14px;
-        font-size: 14px;
-    }
-}
-
-/* =========================
-   MÓVILES
-========================= */
-@media (max-width: 576px) {
-
-    /* Navbar */
-    .navbar ul {
-        flex-direction: column;
-        gap: 12px;
-        text-align: center;
+    .navbar ul.show {
+        max-height: 500px; /* Se despliega */
+        padding-bottom: 10px;
     }
 
     .navbar a {
-        font-size: 15px;
-        padding: 5px 10px;
-    }
-
-    /* Tarjetas */
-    .tarjetas-container {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
-
-    .tarjeta-card {
-        max-width: 100%;
-    }
-
-    .tarjeta-card img {
-        max-height: 150px;
-    }
-
-    .tarjeta-card h3 {
-        font-size: 16px;
-    }
-
-    .tarjeta-card p {
-        font-size: 14px;
-    }
-
-    /* Botones de modales */
-    .botones-container {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .botones-container button {
-        width: 90%;
-        font-size: 15px;
-        padding: 10px 20px;
-    }
-
-    /* Formulario */
-    .content-section {
-        width: 95%;
-        padding: 20px 15px;
-    }
-
-    .ui-form input {
-        font-size: 14px;
-        padding: 8px 10px;
-    }
-
-    .btn-submit {
-        font-size: 16px;
+        display: block;
+        width: 100%;
         padding: 10px;
-    }
-
-    /* Acordeón */
-    .acordeon-container {
-        width: 95%;
-    }
-
-    .acordeon-btn {
-        font-size: 16px;
-        padding: 12px;
-    }
-
-    .acordeon-contenido {
-        padding: 12px;
-    }
-
-    /* Tooltips */
-    .tooltip img {
-        width: 80px;
-        height: 80px;
-    }
-
-    .tooltiptext {
-        width: 180px;
-        font-size: 13px;
-    }
-
-    /* Modales */
-    .modal-content {
-        width: 90%;
-        padding: 15px 15px;
-    }
-
-    .modal-content h3 {
-        font-size: 18px;
-    }
-
-    .modal-content p {
-        font-size: 14px;
-    }
-
-    .modal-content button {
-        padding: 6px 12px;
-        font-size: 13px;
-        margin: 8px 4px 0 4px;
+        color: white;
+        font-size: 17px;
     }
 }
+
 
