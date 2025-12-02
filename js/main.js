@@ -1,8 +1,10 @@
 // ============================
+// ============================
 // MENU HAMBURGUESA
 // ============================
+// Ahora usamos querySelector para seleccionar por clase
 const hamburger = document.getElementById("hamburger");
-const navLinks = document.getElementById("nav-links");
+const navLinks = document.querySelector(".nav-menu"); // Cambiado de ID a clase
 
 hamburger.addEventListener("click", () => {
     navLinks.classList.toggle("show"); // coincide con tu CSS responsive
