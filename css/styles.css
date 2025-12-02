@@ -820,67 +820,90 @@ body {
     80% { transform: translateX(-50%) translateY(-5px); }
     100% { transform: translateX(-50%) translateY(0); }
 }
-
 /* =========================
-   NAVBAR RESPONSIVE REAL
+   MEDIA QUERIES ADICIONALES
 ========================= */
 
-/* Contenedor del título + hamburguesa */
-.nav-container {
-    display: none; 
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 15px;
-    background: #222;
-    color: #fff;
-    font-size: 18px;
-}
-
-/* Icono hamburguesa */
-.hamburger {
-    font-size: 25px;
-    cursor: pointer;
-    user-select: none;
-}
-
-/* Ocultar menú al inicio en móviles */
-#nav-links {
-    display: flex;
-    transition: max-height 0.3s ease-in-out;
-}
-
-/* =========================
-   TABLETS Y MÓVILES
-========================= */
-@media (max-width: 992px) {
-
-    .nav-container {
-        display: flex; /* Mostrar título + hamburguesa */
+/* Tablets medianas */
+@media (max-width: 768px) {
+    /* Ajustar tamaños de header y navbar */
+    .top-header {
+        font-size: 20px;
+        padding: 20px 0;
     }
 
+    .page-header h1 {
+        font-size: 24px;
+    }
+
+    /* Navbar */
     .navbar ul {
-        flex-direction: column;
-        text-align: center;
-        width: 100%;
-        background: #222;
         max-height: 0;
-        overflow: hidden;
-        padding: 0;
-        margin: 0;
     }
 
-    .navbar ul.show {
-        max-height: 500px; /* Se despliega */
+    .navbar ul.show-menu {
+        max-height: 600px; /* despliega menú */
         padding-bottom: 10px;
     }
 
     .navbar a {
-        display: block;
-        width: 100%;
-        padding: 10px;
-        color: white;
-        font-size: 17px;
+        font-size: 16px;
+        padding: 10px 0;
+    }
+
+    /* Acordeón */
+    .acordeon-container {
+        width: 95%;
+    }
+
+    .acordeon-btn {
+        font-size: 16px;
+        padding: 14px;
+    }
+
+    /* Tooltips */
+    .tooltip img {
+        width: 100px;
+        height: 100px;
     }
 }
+
+/* Móviles pequeños */
+@media (max-width: 480px) {
+    .top-header {
+        font-size: 18px;
+        padding: 15px 0;
+    }
+
+    .page-header h1 {
+        font-size: 20px;
+    }
+
+    /* Navbar */
+    .navbar a {
+        font-size: 15px;
+        padding: 8px 0;
+    }
+
+    /* Acordeón */
+    .acordeon-btn {
+        font-size: 15px;
+        padding: 12px;
+    }
+
+    /* Tooltips */
+    .tooltip img {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+/* =========================
+   TRANSICIÓN DEL MENÚ HAMBURGUESA
+========================= */
+.navbar ul {
+    transition: max-height 0.4s ease;
+}
+
 
 
