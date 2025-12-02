@@ -6,11 +6,11 @@ const navMenu = document.querySelector(".nav-menu");
 
 if (hamburger && navMenu) {
     hamburger.addEventListener("click", () => {
-        navMenu.classList.toggle("show"); // activa/desactiva el menú
+        navMenu.classList.toggle("show");
     });
 }
 
-// Cerrar menu al hacer click en un enlace (móvil)
+// Cerrar menu al hacer click en un enlace (MÓVIL)
 const navLinks = document.querySelectorAll('.nav-menu li a');
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
