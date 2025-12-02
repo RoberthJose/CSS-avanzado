@@ -22,7 +22,8 @@
             </div>
         </div>
 
-        <ul class="nav-menu">
+        <!-- Menú con ID agregado para JS -->
+        <ul class="nav-menu" id="nav-links">
             <li><a href="index.html">Inicio</a></li>
             <li><a href="botones.html">Botones</a></li>
             <li><a href="tarjetas.html">Tarjetas</a></li>
@@ -36,10 +37,10 @@
     <!-- ======= JS PARA HAMBURGUESA ======= -->
     <script>
         const hamburger = document.getElementById("hamburger");
-        const navMenu = document.querySelector(".nav-menu");
+        const navMenu = document.getElementById("nav-links"); // cambiado para usar ID
 
         hamburger.addEventListener("click", () => {
-            navMenu.classList.toggle("active");
+            navMenu.classList.toggle("show"); // coincide con tu CSS
         });
     </script>
 
@@ -97,38 +98,8 @@
     </main>
 
     <!-- ======= JS PARA ACORDEÓN ======= -->
-    <script>
-        const acordeonButtons = document.querySelectorAll(".acordeon-btn");
-
-        acordeonButtons.forEach((btn, index) => {
-            btn.addEventListener("click", () => {
-                const content = btn.nextElementSibling;
-
-                // Cerrar todos los demás
-                document.querySelectorAll(".acordeon-contenido").forEach(c => {
-                    if (c !== content) {
-                        c.style.height = "0";
-                        c.classList.remove("show");
-                        c.previousElementSibling.classList.remove("active");
-                    }
-                });
-
-                // Alternar contenido actual
-                if (content.style.height && content.style.height !== "0px") {
-                    content.style.height = "0";
-                    content.classList.remove("show");
-                    btn.classList.remove("active");
-                } else {
-                    content.style.height = content.scrollHeight + "px";
-                    content.classList.add("show");
-                    btn.classList.add("active");
-                }
-            });
-        });
-    </script>
+    <script src="js/main.js"></script> <!-- usar tu JS completo que incluye acordeón y modales -->
 
 </body>
 </html>
-
-
 
