@@ -17,10 +17,12 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">UI</div>
+            <!-- Ícono hamburguesa -->
             <div class="hamburger" id="hamburger">☰</div>
         </div>
 
-        <ul class="nav-menu">
+        <!-- Se agrega ID para que el JS externo funcione -->
+        <ul class="nav-menu" id="nav-links">
             <li><a href="index.html">Inicio</a></li>
             <li><a href="botones.html">Botones</a></li>
             <li><a href="tarjetas.html">Tarjetas</a></li>
@@ -30,16 +32,6 @@
             <li class="active"><a href="tooltip.html">Tooltip</a></li>
         </ul>
     </nav>
-
-    <!-- JS PARA HAMBURGUESA -->
-    <script>
-        const hamburger = document.getElementById("hamburger");
-        const navMenu = document.querySelector(".nav-menu");
-
-        hamburger.addEventListener("click", () => {
-            navMenu.classList.toggle("active");
-        });
-    </script>
 
     <!-- ENCABEZADO DE PÁGINA -->
     <header class="page-header">
@@ -104,7 +96,4 @@
             </div>
         </div>
 
-    </main>
-
-</body>
-</html>
+    </
