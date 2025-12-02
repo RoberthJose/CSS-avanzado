@@ -821,14 +821,13 @@ body {
     100% { transform: translateX(-50%) translateY(0); }
 }
 
-
 /* =========================
-   NAVBAR RESPONSIVE REAL
+   NAVBAR RESPONSIVE
 ========================= */
 
 /* Contenedor del título + hamburguesa */
 .nav-container {
-    display: none; 
+    display: none; /* Se muestra solo en móviles/tablets */
     justify-content: space-between;
     align-items: center;
     padding: 10px 15px;
@@ -844,7 +843,7 @@ body {
     user-select: none;
 }
 
-/* Ocultar menú al inicio en móviles */
+/* Menú principal */
 #nav-links {
     display: flex;
     transition: max-height 0.3s ease-in-out;
@@ -854,36 +853,35 @@ body {
    TABLETS Y MÓVILES
 ========================= */
 @media (max-width: 992px) {
-
+    /* Mostrar nav-container */
     .nav-container {
-        display: flex; /* Mostrar título + hamburguesa */
+        display: flex;
     }
 
+    /* Menú vertical y colapsado */
     .navbar ul {
         flex-direction: column;
         text-align: center;
         width: 100%;
         background: #222;
-        max-height: 0;
+        max-height: 0;       /* Oculto al inicio */
         overflow: hidden;
         padding: 0;
         margin: 0;
     }
 
+    /* Menú desplegado al hacer click */
     .navbar ul.show {
-        max-height: 500px; /* Se despliega */
+        max-height: 500px;   /* Ajusta según cantidad de enlaces */
         padding-bottom: 10px;
     }
 
+    /* Enlaces estilo bloque */
     .navbar a {
         display: block;
         width: 100%;
-        padding: 10px;
+        padding: 10px 0;
         color: white;
         font-size: 17px;
     }
 }
-
-
-
-
