@@ -8,14 +8,21 @@
 </head>
 <body>
 
-    <!-- ENCABEZADO SUPERIOR -->
+    <!-- ======= ENCABEZADO SUPERIOR ======= -->
     <header class="top-header">
         Componentes de Interfaz de Usuario (UI)
     </header>
 
-    <!-- BARRA DE NAVEGACIÓN -->
+    <!-- ======= NAVBAR ======= -->
     <nav class="navbar">
-        <ul>
+        <div class="nav-container">
+            <span class="nav-title">Menú</span>
+            <div class="hamburger" id="hamburger">
+                ☰
+            </div>
+        </div>
+
+        <ul id="nav-links">
             <li><a href="index.html">Inicio</a></li>
             <li><a href="botones.html">Botones</a></li>
             <li><a href="tarjetas.html">Tarjetas</a></li>
@@ -26,16 +33,15 @@
         </ul>
     </nav>
 
-    <!-- ENCABEZADO DE PÁGINA -->
+    <!-- ======= ENCABEZADO DE PÁGINA ======= -->
     <header class="page-header">
         <h1>Componentes de UI: Acordeón</h1>
         <p>Aquí se mostrará la información organizada en acordeones.</p>
     </header>
 
-    <!-- CONTENIDO -->
+    <!-- ======= CONTENIDO ======= -->
     <main class="acordeon-container">
 
-        <!-- ACORDEONES -->
         <div class="acordeon-item">
             <button class="acordeon-btn">¿Qué es un acordeón? <span class="arrow">▼</span></button>
             <div class="acordeon-contenido">
@@ -80,8 +86,17 @@
 
     </main>
 
-    <!-- JS CORREGIDO -->
+    <!-- ======= JAVASCRIPT ======= -->
     <script>
+        // MENÚ HAMBURGUESA
+        const hamburger = document.getElementById("hamburger");
+        const navLinks = document.getElementById("nav-links");
+
+        hamburger.addEventListener("click", () => {
+            navLinks.classList.toggle("show-menu");
+        });
+
+        // ACORDEÓN
         const buttons = document.querySelectorAll(".acordeon-btn");
 
         buttons.forEach((btn, index) => {
@@ -97,7 +112,7 @@
                     "stretch-opacity"
                 ];
 
-                // Cerrar los demás acordeones
+                // Cerrar los demás
                 document.querySelectorAll(".acordeon-contenido").forEach(c => {
                     if (c !== content) {
                         c.style.height = "0";
@@ -106,17 +121,15 @@
                     }
                 });
 
-                // Alternar acordeón actual
+                // Alternar actual
                 if (content.style.height && content.style.height !== "0px") {
                     content.style.height = "0";
                     content.classList.remove("show", ...animaciones);
                     btn.classList.remove("active");
                 } else {
-                    // Resetear animación
                     content.classList.remove(...animaciones);
                     void content.offsetWidth;
 
-                    // Abrir acordeón
                     content.style.height = content.scrollHeight + "px";
                     content.classList.add("show");
                     btn.classList.add("active");
@@ -130,3 +143,5 @@
 
 </body>
 </html>
+
+
