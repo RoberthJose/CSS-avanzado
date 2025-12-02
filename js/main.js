@@ -1,56 +1,48 @@
 // ============================
-// ============================
 // MENU HAMBURGUESA
 // ============================
-// Ahora usamos querySelector para seleccionar por clase
 const hamburger = document.getElementById("hamburger");
-const navLinks = document.querySelector(".nav-menu"); // Cambiado de ID a clase
+const navMenu = document.querySelector(".nav-menu");
 
-hamburger.addEventListener("click", () => {
-    navLinks.classList.toggle("show"); // coincide con tu CSS responsive
-});
+if (hamburger && navMenu) {
+    hamburger.addEventListener("click", () => {
+        navMenu.classList.toggle("show"); // coincide con tu CSS responsive
+    });
+}
 
 // ============================
 // MODALES
 // ============================
-// Botones para abrir modales
 const openButtons = document.querySelectorAll('.open-modal');
-// Todos los modales
 const modals = document.querySelectorAll('.modal');
-// Botones de cerrar
 const closeButtons = document.querySelectorAll('.modal-content .close');
 
-// Abrir modal
 openButtons.forEach(btn => {
     btn.addEventListener('click', () => {
-        const modalId = btn.dataset.modal; 
+        const modalId = btn.dataset.modal;
         const modal = document.getElementById(modalId);
-        modal.style.display = 'flex';
-        requestAnimationFrame(() => {
-            modal.classList.add('show');
-        });
+        if (modal) {
+            modal.style.display = 'flex';
+            requestAnimationFrame(() => modal.classList.add('show'));
+        }
     });
 });
 
-// Cerrar modal
 closeButtons.forEach(btn => {
     btn.addEventListener('click', e => {
         const modal = e.target.closest('.modal');
-        modal.classList.remove('show');
-        setTimeout(() => {
-            modal.style.display = 'none';
-        }, 500);
+        if (modal) {
+            modal.classList.remove('show');
+            setTimeout(() => modal.style.display = 'none', 500);
+        }
     });
 });
 
-// Cerrar modal al hacer click fuera del contenido
 modals.forEach(modal => {
     modal.addEventListener('click', e => {
         if (e.target === modal) {
             modal.classList.remove('show');
-            setTimeout(() => {
-                modal.style.display = 'none';
-            }, 500);
+            setTimeout(() => modal.style.display = 'none', 500);
         }
     });
 });
@@ -58,12 +50,11 @@ modals.forEach(modal => {
 // ============================
 // ACORDEÓN
 // ============================
-const buttons = document.querySelectorAll(".acordeon-btn");
+const acordeonButtons = document.querySelectorAll(".acordeon-btn");
 
-buttons.forEach((btn, index) => {
+acordeonButtons.forEach((btn, index) => {
     btn.addEventListener("click", () => {
         const content = btn.nextElementSibling;
-
         const animaciones = [
             "blur-in",
             "flip-vertical",
