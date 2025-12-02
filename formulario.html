@@ -19,12 +19,12 @@
             <div class="nav-logo">UI</div>
 
             <!-- BOTÓN HAMBURGUESA -->
-            <div class="hamburger" onclick="toggleMenu()">
+            <div class="hamburger" id="hamburger">
                 ☰
             </div>
         </div>
 
-        <ul id="nav-menu">
+        <ul class="nav-menu">
             <li><a href="index.html">Inicio</a></li>
             <li><a href="botones.html">Botones</a></li>
             <li><a href="tarjetas.html">Tarjetas</a></li>
@@ -35,10 +35,14 @@
         </ul>
     </nav>
 
+    <!-- ======= JS PARA HAMBURGUESA ======= -->
     <script>
-        function toggleMenu() {
-            document.getElementById("nav-menu").classList.toggle("show");
-        }
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
     </script>
 
     <!-- ======= ENCABEZADO DE LA PÁGINA ======= -->
