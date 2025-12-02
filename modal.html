@@ -24,7 +24,8 @@
             </div>
         </div>
 
-        <ul class="nav-menu">
+        <!-- Menú con ID agregado para JS -->
+        <ul class="nav-menu" id="nav-links">
             <li><a href="index.html">Inicio</a></li>
             <li><a href="botones.html">Botones</a></li>
             <li><a href="tarjetas.html">Tarjetas</a></li>
@@ -38,10 +39,10 @@
     <!-- ======= JS PARA HAMBURGUESA ======= -->
     <script>
         const hamburger = document.getElementById('hamburger');
-        const navMenu = document.querySelector('.nav-menu');
+        const navMenu = document.getElementById('nav-links'); // cambiado para usar ID
 
         hamburger.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
+            navMenu.classList.toggle('show'); // coincide con tu CSS
         });
     </script>
 
@@ -96,3 +97,4 @@
     <script src="js/main.js"></script>
 </body>
 </html>
+
