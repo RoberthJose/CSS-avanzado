@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Componentes - Acordeón</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- ENCABEZADO SUPERIOR -->
+    <header class="top-header">
+        Componentes de Interfaz de Usuario (UI)
+    </header>
+
+    <!-- BARRA DE NAVEGACIÓN -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="botones.html">Botones</a></li>
+            <li><a href="tarjetas.html">Tarjetas</a></li>
+            <li><a href="formulario.html">Formulario</a></li>
+            <li><a href="modal.html">Modal</a></li>
+            <li class="active"><a href="acordeon.html">Acordeón</a></li>
+            <li><a href="tooltip.html">Tooltip</a></li>
+        </ul>
+    </nav>
+
+    <!-- ENCABEZADO DE PÁGINA -->
+    <header class="page-header">
+        <h1>Componentes de UI: Acordeón</h1>
+        <p>Aquí se mostrará la información organizada en acordeones.</p>
+    </header>
+
+    <!-- CONTENIDO -->
+    <main class="acordeon-container">
+
+        <!-- ACORDEONES -->
+        <div class="acordeon-item">
+            <button class="acordeon-btn">¿Qué es un acordeón? <span class="arrow">▼</span></button>
+            <div class="acordeon-contenido">
+                <p>Un acordeón es un componente visual que permite mostrar y ocultar información.</p>
+            </div>
+        </div>
+
+        <div class="acordeon-item">
+            <button class="acordeon-btn">¿Para qué sirve un acordeón? <span class="arrow">▼</span></button>
+            <div class="acordeon-contenido">
+                <p>Sirve para organizar texto sin ocupar demasiado espacio.</p>
+            </div>
+        </div>
+
+        <div class="acordeon-item">
+            <button class="acordeon-btn">Importancia del acordeón <span class="arrow">▼</span></button>
+            <div class="acordeon-contenido">
+                <p>Es importante porque mejora la experiencia del usuario y mantiene todo ordenado.</p>
+            </div>
+        </div>
+
+        <div class="acordeon-item">
+            <button class="acordeon-btn">¿Cómo funciona un acordeón? <span class="arrow">▼</span></button>
+            <div class="acordeon-contenido">
+                <p>Funciona mostrando u ocultando contenido cuando el usuario hace clic.</p>
+            </div>
+        </div>
+
+        <div class="acordeon-item">
+            <button class="acordeon-btn">Ventajas del acordeón <span class="arrow">▼</span></button>
+            <div class="acordeon-contenido">
+                <p>Ahorra espacio, organiza mejor el contenido y mejora la navegación.</p>
+            </div>
+        </div>
+
+        <div class="acordeon-item">
+            <button class="acordeon-btn">Ejemplo de uso <span class="arrow">▼</span></button>
+            <div class="acordeon-contenido">
+                <p>Frecuente en FAQ, manuales, descripciones de productos o contenido técnico.</p>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- JS CORREGIDO -->
+    <script>
+        const buttons = document.querySelectorAll(".acordeon-btn");
+
+        buttons.forEach((btn, index) => {
+            btn.addEventListener("click", () => {
+                const content = btn.nextElementSibling;
+
+                const animaciones = [
+                    "blur-in",
+                    "flip-vertical",
+                    "flip-horizontal",
+                    "accordion-wave",
+                    "slide-fade",
+                    "stretch-opacity"
+                ];
+
+                // Cerrar los demás acordeones
+                document.querySelectorAll(".acordeon-contenido").forEach(c => {
+                    if (c !== content) {
+                        c.style.height = "0";
+                        c.classList.remove("show", ...animaciones);
+                        c.previousElementSibling.classList.remove("active");
+                    }
+                });
+
+                // Alternar acordeón actual
+                if (content.style.height && content.style.height !== "0px") {
+                    content.style.height = "0";
+                    content.classList.remove("show", ...animaciones);
+                    btn.classList.remove("active");
+                } else {
+                    // Resetear animación
+                    content.classList.remove(...animaciones);
+                    void content.offsetWidth;
+
+                    // Abrir acordeón
+                    content.style.height = content.scrollHeight + "px";
+                    content.classList.add("show");
+                    btn.classList.add("active");
+
+                    const animacion = animaciones[index % animaciones.length];
+                    content.classList.add(animacion);
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

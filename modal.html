@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal - Componentes UI</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- ======= ENCABEZADO SUPERIOR ======= -->
+    <header class="top-header fade-in">
+        Componentes de Interfaz de Usuario (UI)
+    </header>
+
+    <!-- ======= NAVBAR ======= -->
+    <nav class="navbar slide-down">
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="botones.html">Botones</a></li>
+            <li><a href="tarjetas.html">Tarjetas</a></li>
+            <li><a href="formulario.html">Formulario</a></li>
+            <li class="active"><a href="modal.html">Modal</a></li>
+            <li><a href="acordeon.html">Acordeón</a></li>
+            <li><a href="tooltip.html">Tooltip</a></li>
+        </ul>
+    </nav>
+
+    <!-- ======= ENCABEZADO DE LA PÁGINA ======= -->
+    <header class="page-header fade-in-up">
+        <h1>Modal</h1>
+        <p>Los modales son ventanas emergentes que permiten mostrar información, confirmaciones o advertencias sin abandonar la página.</p>
+    </header>
+
+    <!-- ======= CONTENIDO ======= -->
+    <section class="content-section fade-up">
+        <h2>Ejemplos de Modales</h2>
+
+        <!-- ======= BOTONES PARA ABRIR MODALES ======= -->
+        <div class="botones-container">
+            <button class="open-modal" data-modal="modal1">Abrir Modal de Informacion</button>
+            <button class="open-modal" data-modal="modal2">Abrir Modal de Confirmación</button>
+            <button class="open-modal" data-modal="modal3">Abrir Modal de Advertencia</button>
+        </div>
+
+        <!-- ====== MODAL 1: Informativo ====== -->
+        <div class="modal fade" id="modal1">
+            <div class="modal-content">
+                <h3>Modal Informativo</h3>
+                <p>Un modal es una ventana emergente que aparece sobre la página para mostrar información importante al usuario.</p>
+                <button class="close">Cerrar</button>
+            </div>
+        </div>
+
+        <!-- ====== MODAL 2: Confirmación ====== -->
+        <div class="modal zoom" id="modal2">
+            <div class="modal-content">
+                <h3>Modal de Confirmación</h3>
+                <p>¿Deseas continuar con esta acción? Esta acción no se puede deshacer.</p>
+                <button class="close">Cancelar</button>
+                <button class="close">Aceptar</button>
+            </div>
+        </div>
+
+        <!-- ====== MODAL 3: Advertencia ====== -->
+        <div class="modal slide" id="modal3">
+            <div class="modal-content">
+                <h3>Modal de Advertencia</h3>
+                <p>Advertencia: Asegúrate de guardar tu trabajo antes de continuar, ya que esta acción no se puede deshacer.</p>
+                <button class="close">Cerrar</button>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- ======= ENLACE AL JS ======= -->
+    <script src="js/main.js"></script>
+</body>
+</html>
+
+

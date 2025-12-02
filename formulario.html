@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario - Componentes UI</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- ======= ENCABEZADO SUPERIOR ======= -->
+    <header class="top-header fade-in">
+        Componentes de Interfaz de Usuario (UI)
+    </header>
+
+    <!-- ======= NAVBAR ======= -->
+    <nav class="navbar slide-down">
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="botones.html">Botones</a></li>
+            <li><a href="tarjetas.html">Tarjetas</a></li>
+            <li class="active"><a href="formulario.html">Formulario</a></li>
+            <li><a href="modal.html">Modal</a></li>
+            <li><a href="acordeon.html">Acordeón</a></li>
+            <li><a href="tooltip.html">Tooltip</a></li>
+        </ul>
+    </nav>
+
+    <!-- ======= ENCABEZADO DE LA PÁGINA ======= -->
+    <header class="page-header fade-in-up">
+        <h1>Formulario</h1>
+        <p>Permite recopilar datos del usuario mediante campos interactivos y organizados.</p>
+    </header>
+
+    <!-- ======= CONTENIDO ======= -->
+    <section class="content-section fade-up">
+
+        <form class="ui-form form-anim">
+
+            <label class="label-anim">Nombre:</label>
+            <input type="text" placeholder="Ingrese su nombre" class="input-anim">
+
+            <label class="label-anim">Apellido:</label>
+            <input type="text" placeholder="Ingrese su apellido" class="input-anim">
+
+            <label class="label-anim">Correo electrónico:</label>
+            <input type="email" placeholder="ejemplo@gmail.com" class="input-anim">
+
+            <label class="label-anim">Teléfono:</label>
+            <input type="tel" placeholder="0999999999" class="input-anim">
+
+            <label class="label-anim">Sexo:</label>
+            <div class="sexo-opciones fade-in">
+                <label><input type="radio" name="sexo"> Masculino</label>
+                <label><input type="radio" name="sexo"> Femenino</label>
+            </div>
+
+            <label class="label-anim">Ciudad / País:</label>
+            <input type="text" placeholder="Ingrese su ciudad" class="input-anim">
+
+            <button type="submit" class="btn-submit anim-boton btn-anim">Enviar</button>
+
+        </form>
+    </section>
+
+</body>
+</html>
+

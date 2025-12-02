@@ -1,0 +1,1015 @@
+/* ======= RESET ======= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    line-height: 1.5;
+}
+
+/* ======= FONDO GENERAL ======= */
+body {
+    background: #f4f4f4;
+}
+
+/* ======= ENCABEZADO SUPERIOR ======= */
+.top-header {
+    background: #004aad;
+    color: white;
+    padding: 25px 0;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* ======= NAVBAR ======= */
+.navbar {
+    background: #0a6cff;
+    padding: 12px 0;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    font-size: 17px;
+    padding: 6px 12px;
+    position: relative;
+    transition: 0.3s ease;
+}
+
+.navbar a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 3px;
+    background: white;
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+}
+
+.navbar .active a {
+    font-weight: bold;
+}
+
+/* ======= ENCABEZADO DE PÁGINA ======= */
+.page-header {
+    padding: 25px 15px;
+    margin-top: 0;
+    text-align: center;
+}
+
+/* ======= CONTENIDO PRINCIPAL ======= */
+.content {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.box {
+    background: transparent !important;
+    padding: 0;
+    max-width: 800px;
+    border-radius: 0;
+    box-shadow: none !important;
+    text-align: center;
+    border: none;
+}
+
+/* ======= CONTENEDOR DE IMAGEN ======= */
+.img-container {
+    width: 100%;
+    max-width: 800px;
+    height: 0;
+    padding-top: 66.7%;
+    position: relative;
+    margin-bottom: 25px;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.img-container .main-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.4s ease;
+}
+
+.img-container:hover .main-img {
+    transform: scale(1.08);
+}
+
+/* ======= TEXTO ======= */
+.description {
+    font-size: 19px;
+    color: #333;
+    text-align: justify;
+    text-justify: inter-word;
+    padding: 0 20px;
+}
+
+/* ======= CONTENEDOR DE BOTONES ======= */
+.botones-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 25px;
+    padding: 40px 20px;
+}
+
+/* Tarjeta */
+.boton-card {
+    background: transparent;
+    border-radius: 10px;
+    padding: 20px 10px;
+    text-align: center;
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 200px;
+}
+
+/* Títulos y texto */
+.boton-card h3 {
+    min-height: 40px;
+    margin-bottom: 10px;
+}
+
+.boton-card p {
+    min-height: 60px;
+    margin-bottom: 10px;
+}
+
+/* ======= BOTONES GENERALES ======= */
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* ====================== */
+/*   COLORES ACTUALIZADOS */
+/* ====================== */
+
+/* 🔵 PRIMARIO */
+.btn-primario {
+    background-color: #007bff;
+}
+.btn-primario:hover {
+    filter: brightness(1.1);
+}
+
+/* ⚪ SECUNDARIO */
+.btn-secundario {
+    background-color: #6c757d;
+}
+.btn-secundario:hover {
+    filter: brightness(1.1);
+}
+
+/* 🟢 ÉXITO */
+.btn-exito {
+    background-color: #28a745;
+}
+.btn-exito:hover {
+    filter: brightness(1.1);
+}
+
+/* 🔴 PELIGRO */
+.btn-peligro {
+    background-color: #dc3545;
+}
+.btn-peligro:hover {
+    filter: brightness(1.1);
+}
+
+/* 🟡 ADVERTENCIA */
+.btn-advertencia {
+    background-color: #ffc107;
+    color: #333;
+}
+.btn-advertencia:hover {
+    filter: brightness(1.1);
+    box-shadow: 0 0 12px rgba(255,193,7,0.8);
+}
+
+/* 🔗 LINK */
+.btn-link {
+    background: transparent;
+    color: #007bff;
+    text-decoration: underline;
+    border: none;
+    padding: 5px;
+    font-size: 16px;
+}
+.btn-link:hover {
+    opacity: 0.6;
+}
+
+/* ========================= */
+/*    ANIMACIONES EXISTENTES */
+/* ========================= */
+
+.anim-elevacion:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+}
+
+.anim-resplandor:hover {
+    box-shadow: 0 0 15px rgba(108,117,125,0.7);
+}
+
+.anim-pulse:hover {
+    animation: pulse 0.6s;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.anim-vibracion:hover {
+    animation: vibrar 0.3s;
+}
+
+@keyframes vibrar {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-3px); }
+    50% { transform: translateX(3px); }
+    75% { transform: translateX(-3px); }
+    100% { transform: translateX(0); }
+}
+
+/* ================================ */
+/*   BOTÓN ADVERTENCIA MEJORADO    */
+/* ================================ */
+
+.anim-advertencia:hover {
+    transform: scale(1.08) rotate(1deg);
+    box-shadow: 0 0 18px rgba(255,193,7,0.9);
+    filter: brightness(1.1);
+}
+
+/* ================================ */
+/*     BOTON LINK (ya incluido)    */
+/* ================================ */
+
+/* ======= NUEVAS CLASES PARA TARJETAS.HTML ======= */
+
+.tarjetas-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 10px;
+    row-gap: 25px;
+    padding: 40px 20px;
+    align-items: start;
+    justify-items: center;
+}
+
+.tarjeta-card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 350px;
+    width: 100%;
+    max-width: 250px;
+}
+
+.tarjeta-card img {
+    max-width: 100%;
+    max-height: 180px;
+    margin-bottom: 12px;
+    border-radius: 10px;
+    object-fit: contain;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.tarjeta-card h3 {
+    min-height: 40px;
+    margin-bottom: 8px;
+    font-size: 18px;
+    color: #222;
+}
+
+.tarjeta-card p {
+    min-height: 50px;
+    margin-bottom: 12px;
+    font-size: 15px;
+    color: #555;
+    line-height: 1.4;
+}
+
+/* Animaciones */
+.anim-tarjeta-elevacion:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.anim-tarjeta-resplandor:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px rgba(0,123,255,0.4);
+}
+
+.anim-tarjeta-pulse:hover {
+    animation: pulse-tarjeta 0.6s;
+}
+
+@keyframes pulse-tarjeta {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.06); }
+    100% { transform: scale(1); }
+}
+
+.anim-tarjeta-vibracion:hover {
+    animation: vibrar-tarjeta 0.3s;
+}
+
+@keyframes vibrar-tarjeta {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-3px); }
+    50% { transform: translateX(3px); }
+    75% { transform: translateX(-3px); }
+    100% { transform: translateX(0); }
+}
+
+.anim-tarjeta-zoom:hover {
+    transform: scale(1.06) rotate(0.5deg);
+    box-shadow: 0 0 22px rgba(0,123,255,0.5);
+    filter: brightness(1.05);
+}
+
+.anim-tarjeta-tooltip:hover {
+    transform: rotate(2deg) scale(1.05);
+}
+
+/* ======= FORMULARIO ======= */
+.content-section {
+    max-width: 600px;
+    margin: 40px auto;
+    background: #ffffff;
+    padding: 30px 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    animation: formEntrada 0.8s ease forwards;
+}
+
+.content-section h2 {
+    text-align: center;
+    font-size: 26px;
+    margin-bottom: 20px;
+    color: #004aad;
+    font-weight: bold;
+}
+
+.ui-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-size: 16px;
+}
+
+.ui-form label {
+    font-weight: bold;
+    color: #333;
+}
+
+.ui-form input {
+    padding: 10px 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: 0.3s ease;
+    font-size: 15px;
+}
+
+/* FOCUS */
+.ui-form input:focus {
+    border-color: #0a6cff;
+    box-shadow: 0 0 10px rgba(10, 108, 255, 0.4);
+    transform: scale(1.02);
+}
+
+.sexo-opciones {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 8px;
+}
+
+.btn-submit {
+    background: #0a6cff;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 17px;
+    margin-top: 10px;
+    transition: 0.3s ease;
+}
+
+.btn-submit:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 12px rgba(0,0,0,0.25);
+}
+
+/* Animación de entrada */
+@keyframes formEntrada {
+    from {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ====== MODALES ====== */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 25px 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    opacity: 0;
+    transform: scale(0.7);
+    transition: all 0.8s ease;
+}
+
+.modal#modal1.show .modal-content {
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 1s ease, transform 0.8s ease;
+}
+
+.modal#modal2.show .modal-content {
+    opacity: 1;
+    transform: scale(1.2);
+    transition: transform 1s ease, opacity 1s ease;
+}
+
+.modal#modal3.show .modal-content {
+    opacity: 1;
+    transform: translateY(0);
+    transition: transform 1s ease, opacity 1s ease;
+}
+
+.modal#modal3 .modal-content {
+    transform: translateY(-50px);
+}
+
+.modal-content button {
+    padding: 8px 16px;
+    margin: 10px 5px 0 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #007BFF;
+    color: white;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.modal-content button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Botones abrir modal */
+.botones-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.botones-container button {
+    padding: 12px 25px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    background-color: #6C63FF;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    width: 220px;
+    text-align: center;
+}
+
+.botones-container button:hover {
+    background-color: #574B90;
+    transform: scale(1.05);
+}
+
+/* Forzar actualización de colores en los botones */
+.btn-primario,
+.btn-secundario,
+.btn-exito,
+.btn-peligro,
+.btn-advertencia,
+.btn-link {
+    background-color: inherit;
+}
+
+/* Reaplicar colores nuevos con prioridad */
+.btn-primario { background-color: #007bff !important; }
+.btn-secundario { background-color: #6c757d !important; }
+.btn-exito { background-color: #28a745 !important; }
+.btn-peligro { background-color: #dc3545 !important; }
+.btn-advertencia { 
+    background-color: #ffc107 !important; 
+    color: #333 !important;
+}
+.btn-link {
+    background: transparent !important;
+    color: #007bff !important;
+    text-decoration: underline;
+}
+
+
+/* ============================
+   CONTENEDOR PRINCIPAL
+============================ */
+.acordeon-container {
+    width: 90%;
+    max-width: 700px;
+    margin: 30px auto;
+    font-family: Arial, sans-serif;
+}
+
+/* ============================
+   ÍTEM DEL ACORDEÓN
+============================ */
+.acordeon-item {
+    margin-bottom: 12px;
+}
+
+/* ============================
+   BOTÓN DEL ACORDEÓN
+============================ */
+.acordeon-btn {
+    width: 100%;
+    padding: 16px;
+    background: #f8f8f8;
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: left;
+    font-size: 18px;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease;
+}
+
+/* Hover elegante */
+.acordeon-btn:hover {
+    background: #ececec;
+    border-color: #c7c7c7;
+    box-shadow: 0px 3px 8px rgba(0,0,0,0.1);
+}
+
+/* Flecha */
+.acordeon-btn .arrow {
+    transition: transform 0.5s ease;
+    font-size: 16px;
+}
+
+/* Flecha girando cuando está activo */
+.acordeon-btn.active .arrow {
+    transform: rotate(180deg);
+}
+
+/* ============================
+   CONTENIDO DEL ACORDEÓN
+============================ */
+.acordeon-contenido {
+    height: 0; /* cerrado por defecto */
+    overflow: hidden;
+    padding: 16px; /* Padding fijo para evitar corte */
+    background: #ffffff;
+    border-left: 3px solid #007bff;
+    border-radius: 0 0 8px 8px;
+    transition: height 1s ease, opacity 1s ease;
+    opacity: 0;
+    box-sizing: border-box;
+    line-height: 1.4;
+}
+
+/* Cuando el acordeón está abierto */
+.acordeon-contenido.show {
+    opacity: 1;
+}
+
+/* ============================
+   ANIMACIONES
+============================ */
+.blur-in {
+    animation: blurIn 1s ease;
+}
+@keyframes blurIn {
+    from { filter: blur(6px); opacity: 0; }
+    to { filter: blur(0); opacity: 1; }
+}
+
+.flip-vertical {
+    animation: flipVertical 1s ease;
+}
+@keyframes flipVertical {
+    from { transform: rotateX(-90deg); opacity: 0; }
+    to { transform: rotateX(0); opacity: 1; }
+}
+
+.flip-horizontal {
+    animation: flipHorizontal 1s ease;
+}
+@keyframes flipHorizontal {
+    from { transform: rotateY(-90deg); opacity: 0; }
+    to { transform: rotateY(0); opacity: 1; }
+}
+
+.accordion-wave {
+    animation: accordionWave 1.1s ease;
+}
+@keyframes accordionWave {
+    0% { transform: scaleY(0.2); opacity: 0; }
+    50% { transform: scaleY(1.05); opacity: 1; }
+    100% { transform: scaleY(1); }
+}
+
+.slide-fade {
+    animation: slideFade 1s ease;
+}
+@keyframes slideFade {
+    from { transform: translateY(15px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.stretch-opacity {
+    animation: stretchOpacity 1s ease;
+}
+@keyframes stretchOpacity {
+    from { transform: scaleX(0.5); opacity: 0; }
+    to { transform: scaleX(1); opacity: 1; }
+}
+
+/* =======================
+   SECCIÓN TOOLTIP CENTRADA
+======================= */
+.tooltip-section {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 40px;
+}
+
+
+/* =======================
+   Tooltip base
+======================= */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+/* Íconos más grandes */
+.tooltip img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+/* Efecto al pasar */
+.tooltip:hover img {
+    transform: scale(1.12);
+}
+
+/* Texto del tooltip */
+.tooltiptext {
+    visibility: hidden;
+    width: 230px;
+    background-color: #333;
+    color: #fff;
+    padding: 12px;
+    border-radius: 8px;
+    text-align: left;
+    position: absolute;
+    bottom: 140%; /* Más espacio arriba */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.2s;
+    z-index: 10;
+}
+
+/* Muestra el tooltip */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/* =======================
+   ANIMACIONES INDIVIDUALES
+======================= */
+
+/* 1 – Fade */
+.tooltip1:hover .tooltiptext {
+    animation: fadeIn 0.4s forwards;
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* 2 – Slide Down */
+.tooltip2:hover .tooltiptext {
+    animation: slideDown 0.4s forwards;
+}
+@keyframes slideDown {
+    from { opacity: 0; transform: translateX(-50%) translateY(-15px); }
+    to { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+/* 3 – Slide Up */
+.tooltip3:hover .tooltiptext {
+    animation: slideUp 0.4s forwards;
+}
+@keyframes slideUp {
+    from { opacity: 0; transform: translateX(-50%) translateY(15px); }
+    to { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+/* 4 – Zoom */
+.tooltip4:hover .tooltiptext {
+    animation: zoomIn 0.4s forwards;
+}
+@keyframes zoomIn {
+    from { opacity: 0; transform: translateX(-50%) scale(0.5); }
+    to { opacity: 1; transform: translateX(-50%) scale(1); }
+}
+
+/* 5 – Rotate */
+.tooltip5:hover .tooltiptext {
+    animation: rotateIn 0.4s forwards;
+}
+@keyframes rotateIn {
+    from { opacity: 0; transform: translateX(-50%) rotate(-10deg); }
+    to { opacity: 1; transform: translateX(-50%) rotate(0); }
+}
+
+/* 6 – Bounce */
+.tooltip6:hover .tooltiptext {
+    animation: bounceIn 0.5s forwards;
+}
+@keyframes bounceIn {
+    0% { opacity: 0; transform: translateX(-50%) translateY(-40px); }
+    60% { opacity: 1; transform: translateX(-50%) translateY(10px); }
+    80% { transform: translateX(-50%) translateY(-5px); }
+    100% { transform: translateX(-50%) translateY(0); }
+}
+
+/* =========================
+   MEDIA QUERIES COMPLETAS
+========================= */
+
+/* =========================
+   TABLETS
+========================= */
+@media (max-width: 992px) {
+
+    /* Navbar */
+    .navbar ul {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    /* Tarjetas */
+    .tarjetas-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    /* Botones de modales */
+    .botones-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    /* Formulario */
+    .content-section {
+        width: 90%;
+        padding: 25px 20px;
+    }
+
+    /* Acordeón */
+    .acordeon-container {
+        width: 95%;
+    }
+
+    .acordeon-btn {
+        font-size: 17px;
+        padding: 14px;
+    }
+
+    .acordeon-contenido {
+        padding: 14px;
+    }
+
+    /* Tooltips */
+    .tooltip img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .tooltiptext {
+        width: 200px;
+        font-size: 14px;
+    }
+
+    /* Modales */
+    .modal-content {
+        width: 80%;
+        padding: 20px 20px;
+    }
+
+    .modal-content h3 {
+        font-size: 20px;
+    }
+
+    .modal-content p {
+        font-size: 15px;
+    }
+
+    .modal-content button {
+        padding: 8px 14px;
+        font-size: 14px;
+    }
+}
+
+/* =========================
+   MÓVILES
+========================= */
+@media (max-width: 576px) {
+
+    /* Navbar */
+    .navbar ul {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+
+    .navbar a {
+        font-size: 15px;
+        padding: 5px 10px;
+    }
+
+    /* Tarjetas */
+    .tarjetas-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .tarjeta-card {
+        max-width: 100%;
+    }
+
+    .tarjeta-card img {
+        max-height: 150px;
+    }
+
+    .tarjeta-card h3 {
+        font-size: 16px;
+    }
+
+    .tarjeta-card p {
+        font-size: 14px;
+    }
+
+    /* Botones de modales */
+    .botones-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .botones-container button {
+        width: 90%;
+        font-size: 15px;
+        padding: 10px 20px;
+    }
+
+    /* Formulario */
+    .content-section {
+        width: 95%;
+        padding: 20px 15px;
+    }
+
+    .ui-form input {
+        font-size: 14px;
+        padding: 8px 10px;
+    }
+
+    .btn-submit {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    /* Acordeón */
+    .acordeon-container {
+        width: 95%;
+    }
+
+    .acordeon-btn {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    .acordeon-contenido {
+        padding: 12px;
+    }
+
+    /* Tooltips */
+    .tooltip img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .tooltiptext {
+        width: 180px;
+        font-size: 13px;
+    }
+
+    /* Modales */
+    .modal-content {
+        width: 90%;
+        padding: 15px 15px;
+    }
+
+    .modal-content h3 {
+        font-size: 18px;
+    }
+
+    .modal-content p {
+        font-size: 14px;
+    }
+
+    .modal-content button {
+        padding: 6px 12px;
+        font-size: 13px;
+        margin: 8px 4px 0 4px;
+    }
+}
+
