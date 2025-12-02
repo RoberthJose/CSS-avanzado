@@ -825,15 +825,26 @@ body {
    NAVBAR RESPONSIVE
 ========================= */
 
-/* Contenedor del título + hamburguesa */
+/* Contenedor nav completo */
+.navbar {
+    width: 100%;
+    background: #222;
+    color: #fff;
+    font-family: sans-serif;
+}
+
+/* Contenedor del logo + hamburguesa (solo visible en móviles) */
 .nav-container {
-    display: none; /* Se muestra solo en móviles/tablets */
+    display: none; /* se activa en media query */
     justify-content: space-between;
     align-items: center;
     padding: 10px 15px;
-    background: #222;
-    color: #fff;
-    font-size: 18px;
+}
+
+/* Logo */
+.nav-logo {
+    font-size: 20px;
+    font-weight: bold;
 }
 
 /* Icono hamburguesa */
@@ -843,55 +854,57 @@ body {
     user-select: none;
 }
 
-/* Menú principal */
+/* Menú principal horizontal (PC) */
 .nav-menu {
-    display: flex; /* Horizontal en PC */
+    display: flex;
     list-style: none;
     margin: 0;
     padding: 0;
+    justify-content: center;
     transition: max-height 0.3s ease-in-out;
+    background: #222;
 }
 
 /* Enlaces del menú */
 .nav-menu li a {
     display: block;
-    padding: 10px 15px;
+    padding: 10px 20px;
     color: white;
     text-decoration: none;
     font-size: 17px;
+    text-align: center;
 }
 
 /* =========================
    TABLETS Y MÓVILES
 ========================= */
 @media (max-width: 992px) {
-    /* Mostrar nav-container con hamburguesa */
+    /* Mostrar contenedor con logo + hamburguesa */
     .nav-container {
         display: flex;
     }
 
-    /* Menú vertical y colapsado */
+    /* Menú vertical colapsado */
     .nav-menu {
         flex-direction: column;
         width: 100%;
-        background: #222;
         max-height: 0;
         overflow: hidden;
         padding: 0;
     }
 
     /* Menú desplegado al hacer click */
-    .nav-menu.show {  /* <-- aquí cambiamos "active" por "show" */
-        max-height: 500px; /* Ajusta según la cantidad de enlaces */
+    .nav-menu.show {
+        max-height: 500px; /* Ajusta según cantidad de enlaces */
         padding-bottom: 10px;
     }
 
-    /* Enlaces estilo bloque */
+    /* Enlaces estilo bloque en móvil */
     .nav-menu li a {
         padding: 10px 0;
-        text-align: center;
     }
 }
+
 
 
 
