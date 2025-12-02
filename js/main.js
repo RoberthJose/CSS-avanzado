@@ -1,12 +1,12 @@
 // ============================
-// MENU HAMBURGUESA
+// MENU HAMBURGUESA RESPONSIVE
 // ============================
 const hamburger = document.getElementById("hamburger");
 const navMenu = document.querySelector(".nav-menu");
 
 if (hamburger && navMenu) {
     hamburger.addEventListener("click", () => {
-        navMenu.classList.toggle("show"); // coincide con tu CSS responsive
+        navMenu.classList.toggle("show"); // activa/desactiva el menú
     });
 }
 
@@ -84,6 +84,7 @@ acordeonButtons.forEach((btn, index) => {
             void content.offsetWidth; // reinicia animación
             content.classList.add("show");
             btn.classList.add("active");
+
             const animacion = animaciones[index % animaciones.length];
             content.classList.add(animacion);
             content.style.height = content.scrollHeight + "px";
@@ -93,6 +94,18 @@ acordeonButtons.forEach((btn, index) => {
                 content.style.height = content.scrollHeight + "px";
             });
             resizeObserver.observe(content);
+        }
+    });
+});
+
+// ============================
+// OPCIONAL: CERRAR MENU AL HACER CLICK EN UN ENLACE (MÓVIL)
+// ============================
+const navLinks = document.querySelectorAll('.nav-menu li a');
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        if (navMenu.classList.contains('show')) {
+            navMenu.classList.remove('show');
         }
     });
 });
