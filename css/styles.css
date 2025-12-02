@@ -881,7 +881,7 @@ body {
     }
 
     /* Menú desplegado al hacer click */
-    .nav-menu.active {
+    .nav-menu.show {  /* <-- aquí cambiamos "active" por "show" */
         max-height: 500px; /* Ajusta según la cantidad de enlaces */
         padding-bottom: 10px;
     }
@@ -892,5 +892,6 @@ body {
         text-align: center;
     }
 }
+
 
 
