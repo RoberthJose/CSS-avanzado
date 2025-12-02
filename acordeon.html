@@ -13,16 +13,16 @@
         Componentes de Interfaz de Usuario (UI)
     </header>
 
-    <!-- ======= NAVBAR ======= -->
+    <!-- ======= NAVBAR RESPONSIVE ======= -->
     <nav class="navbar">
         <div class="nav-container">
-            <span class="nav-title">Menú</span>
+            <div class="nav-logo">UI</div>
             <div class="hamburger" id="hamburger">
                 ☰
             </div>
         </div>
 
-        <ul id="nav-links">
+        <ul class="nav-menu">
             <li><a href="index.html">Inicio</a></li>
             <li><a href="botones.html">Botones</a></li>
             <li><a href="tarjetas.html">Tarjetas</a></li>
@@ -32,6 +32,16 @@
             <li><a href="tooltip.html">Tooltip</a></li>
         </ul>
     </nav>
+
+    <!-- ======= JS PARA HAMBURGUESA ======= -->
+    <script>
+        const hamburger = document.getElementById("hamburger");
+        const navMenu = document.querySelector(".nav-menu");
+
+        hamburger.addEventListener("click", () => {
+            navMenu.classList.toggle("active");
+        });
+    </script>
 
     <!-- ======= ENCABEZADO DE PÁGINA ======= -->
     <header class="page-header">
@@ -86,56 +96,32 @@
 
     </main>
 
-    <!-- ======= JAVASCRIPT ======= -->
+    <!-- ======= JS PARA ACORDEÓN ======= -->
     <script>
-        // MENÚ HAMBURGUESA
-        const hamburger = document.getElementById("hamburger");
-        const navLinks = document.getElementById("nav-links");
+        const acordeonButtons = document.querySelectorAll(".acordeon-btn");
 
-        hamburger.addEventListener("click", () => {
-            navLinks.classList.toggle("show-menu");
-        });
-
-        // ACORDEÓN
-        const buttons = document.querySelectorAll(".acordeon-btn");
-
-        buttons.forEach((btn, index) => {
+        acordeonButtons.forEach((btn, index) => {
             btn.addEventListener("click", () => {
                 const content = btn.nextElementSibling;
 
-                const animaciones = [
-                    "blur-in",
-                    "flip-vertical",
-                    "flip-horizontal",
-                    "accordion-wave",
-                    "slide-fade",
-                    "stretch-opacity"
-                ];
-
-                // Cerrar los demás
+                // Cerrar todos los demás
                 document.querySelectorAll(".acordeon-contenido").forEach(c => {
                     if (c !== content) {
                         c.style.height = "0";
-                        c.classList.remove("show", ...animaciones);
+                        c.classList.remove("show");
                         c.previousElementSibling.classList.remove("active");
                     }
                 });
 
-                // Alternar actual
+                // Alternar contenido actual
                 if (content.style.height && content.style.height !== "0px") {
                     content.style.height = "0";
-                    content.classList.remove("show", ...animaciones);
+                    content.classList.remove("show");
                     btn.classList.remove("active");
                 } else {
-                    content.classList.remove(...animaciones);
-                    void content.offsetWidth;
-
                     content.style.height = content.scrollHeight + "px";
                     content.classList.add("show");
                     btn.classList.add("active");
-
-                    const animacion = animaciones[index % animaciones.length];
-                    content.classList.add(animacion);
                 }
             });
         });
@@ -143,5 +129,6 @@
 
 </body>
 </html>
+
 
 
