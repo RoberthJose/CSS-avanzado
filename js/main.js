@@ -1,30 +1,43 @@
-// Seleccionamos todos los botones para abrir modales
+// ============================
+// MENU HAMBURGUESA
+// ============================
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("nav-links");
+
+hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("show"); // coincide con tu CSS responsive
+});
+
+// ============================
+// MODALES
+// ============================
+// Botones para abrir modales
 const openButtons = document.querySelectorAll('.open-modal');
-// Seleccionamos todos los modales
+// Todos los modales
 const modals = document.querySelectorAll('.modal');
-// Seleccionamos todos los botones de cerrar
+// Botones de cerrar
 const closeButtons = document.querySelectorAll('.modal-content .close');
 
-// Función para abrir un modal con animación
+// Abrir modal
 openButtons.forEach(btn => {
     btn.addEventListener('click', () => {
-        const modalId = btn.dataset.modal; // obtiene el id del modal
+        const modalId = btn.dataset.modal; 
         const modal = document.getElementById(modalId);
-        modal.style.display = 'flex';       // muestra el modal
-        requestAnimationFrame(() => {       // asegura animación
-            modal.classList.add('show');    // activa animación CSS
+        modal.style.display = 'flex';
+        requestAnimationFrame(() => {
+            modal.classList.add('show');
         });
     });
 });
 
-// Función para cerrar un modal con animación inversa
+// Cerrar modal
 closeButtons.forEach(btn => {
     btn.addEventListener('click', e => {
         const modal = e.target.closest('.modal');
-        modal.classList.remove('show'); // inicia animación de cierre
+        modal.classList.remove('show');
         setTimeout(() => {
-            modal.style.display = 'none'; // oculta modal tras animación
-        }, 500); // debe coincidir con la duración de tu transition CSS
+            modal.style.display = 'none';
+        }, 500);
     });
 });
 
@@ -40,14 +53,15 @@ modals.forEach(modal => {
     });
 });
 
-// Selecciona todos los botones del acordeón
+// ============================
+// ACORDEÓN
+// ============================
 const buttons = document.querySelectorAll(".acordeon-btn");
 
 buttons.forEach((btn, index) => {
     btn.addEventListener("click", () => {
-        const content = btn.nextElementSibling; // contenido del acordeón
+        const content = btn.nextElementSibling;
 
-        // Lista de animaciones compatibles con tu CSS
         const animaciones = [
             "blur-in",
             "flip-vertical",
@@ -60,7 +74,7 @@ buttons.forEach((btn, index) => {
         // Cerrar otros acordeones
         document.querySelectorAll(".acordeon-contenido").forEach(c => {
             if (c !== content) {
-                c.style.height = "0"; // cerrar
+                c.style.height = "0";
                 c.classList.remove("show", ...animaciones);
                 c.previousElementSibling.classList.remove("active");
             }
@@ -68,27 +82,19 @@ buttons.forEach((btn, index) => {
 
         // Alternar acordeón actual
         if (content.style.height && content.style.height !== "0px") {
-            // Si está abierto → cerrarlo
             content.style.height = "0";
             content.classList.remove("show", ...animaciones);
             btn.classList.remove("active");
         } else {
-            // Si está cerrado → abrirlo
-
-            // Resetear animación
             content.classList.remove(...animaciones);
             void content.offsetWidth; // reinicia animación
-
-            // Aplicar clase show y animación
             content.classList.add("show");
             btn.classList.add("active");
             const animacion = animaciones[index % animaciones.length];
             content.classList.add(animacion);
-
-            // Asignar altura real del contenido
             content.style.height = content.scrollHeight + "px";
 
-            // Ajuste final para que funcione si hay contenido dinámico
+            // Ajuste dinámico si el contenido cambia
             const resizeObserver = new ResizeObserver(() => {
                 content.style.height = content.scrollHeight + "px";
             });
