@@ -821,37 +821,6 @@ body {
     100% { transform: translateX(-50%) translateY(0); }
 }
 
-/* =========================
-   NAVBAR RESPONSIVE
-========================= */
-
-/* Contenedor del título + hamburguesa */
-.nav-container {
-    display: none; /* Se muestra solo en móviles/tablets */
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 15px;
-    background: #222;
-    color: #fff;
-    font-size: 18px;
-}
-
-/* Icono hamburguesa */
-.hamburger {
-    font-size: 25px;
-    cursor: pointer;
-    user-select: none;
-}
-
-/* Menú principal */
-#nav-links {
-    display: flex;
-    transition: max-height 0.3s ease-in-out;
-}
-
-/* =========================
-   TABLETS Y MÓVILES
-========================= */
 @media (max-width: 992px) {
     /* Mostrar nav-container */
     .nav-container {
@@ -859,7 +828,7 @@ body {
     }
 
     /* Menú vertical y colapsado */
-    .navbar ul {
+    #nav-links {
         flex-direction: column;
         text-align: center;
         width: 100%;
@@ -868,16 +837,17 @@ body {
         overflow: hidden;
         padding: 0;
         margin: 0;
+        transition: max-height 0.3s ease-in-out;
     }
 
     /* Menú desplegado al hacer click */
-    .navbar ul.show {
+    #nav-links.show {
         max-height: 500px;   /* Ajusta según cantidad de enlaces */
         padding-bottom: 10px;
     }
 
     /* Enlaces estilo bloque */
-    .navbar a {
+    #nav-links a {
         display: block;
         width: 100%;
         padding: 10px 0;
@@ -885,3 +855,5 @@ body {
         font-size: 17px;
     }
 }
+
+
