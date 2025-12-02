@@ -13,9 +13,18 @@
         Componentes de Interfaz de Usuario (UI)
     </header>
 
-    <!-- ======= NAVBAR ======= -->
-    <nav class="navbar slide-down">
-        <ul>
+    <!-- ======= NAVBAR RESPONSIVE ======= -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">UI</div>
+
+            <!-- BOTÓN HAMBURGUESA -->
+            <div class="hamburger" onclick="toggleMenu()">
+                ☰
+            </div>
+        </div>
+
+        <ul id="nav-menu">
             <li><a href="index.html">Inicio</a></li>
             <li><a href="botones.html">Botones</a></li>
             <li><a href="tarjetas.html">Tarjetas</a></li>
@@ -25,6 +34,12 @@
             <li><a href="tooltip.html">Tooltip</a></li>
         </ul>
     </nav>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById("nav-menu").classList.toggle("show");
+        }
+    </script>
 
     <!-- ======= ENCABEZADO DE LA PÁGINA ======= -->
     <header class="page-header fade-in-up">
@@ -65,4 +80,3 @@
 
 </body>
 </html>
-
