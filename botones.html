@@ -4,19 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Componentes - Botones</title>
-    <!-- Enlace correcto al CSS -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+
     <!-- ======= ENCABEZADO SUPERIOR ======= -->
     <header class="top-header">
         Componentes de Interfaz de Usuario (UI)
     </header>
 
-
-    <!-- Barra de navegación -->
+    <!-- ======= NAVBAR RESPONSIVE ======= -->
     <nav class="navbar">
-        <ul>
+        <div class="nav-container">
+            <div class="nav-logo">UI</div>
+
+            <!-- BOTÓN HAMBURGUESA -->
+            <div class="hamburger" onclick="toggleMenu()">
+                ☰
+            </div>
+        </div>
+
+        <ul id="nav-menu">
             <li><a href="index.html">Inicio</a></li>
             <li class="active"><a href="botones.html">Botones</a></li>
             <li><a href="tarjetas.html">Tarjetas</a></li>
@@ -27,13 +35,19 @@
         </ul>
     </nav>
 
-    <!-- Encabezado de la sección -->
+    <script>
+        function toggleMenu() {
+            document.getElementById("nav-menu").classList.toggle("show");
+        }
+    </script>
+
+    <!-- ======= ENCABEZADO DE SECCIÓN ======= -->
     <header class="page-header">
         <h1>Componentes de UI: Botones</h1>
         <p>Explora los botones y sus animaciones.</p>
     </header>
 
-    <!-- Contenedor de botones -->
+    <!-- ======= CONTENEDOR DE BOTONES ======= -->
     <main class="botones-container">
         <section class="boton-card">
             <h3>Botón Primario</h3>
