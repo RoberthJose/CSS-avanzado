@@ -13,9 +13,14 @@
         Componentes de Interfaz de Usuario (UI)
     </header>
 
-    <!-- BARRA DE NAVEGACIÓN -->
+    <!-- NAVBAR RESPONSIVE -->
     <nav class="navbar">
-        <ul>
+        <div class="nav-container">
+            <span class="nav-title">Menú</span>
+            <div class="hamburger" id="hamburger">☰</div>
+        </div>
+
+        <ul id="nav-links">
             <li><a href="index.html">Inicio</a></li>
             <li><a href="botones.html">Botones</a></li>
             <li><a href="tarjetas.html">Tarjetas</a></li>
@@ -91,7 +96,15 @@
 
     </main>
 
+    <!-- SCRIPT MENÚ -->
+    <script>
+        const hamburger = document.getElementById("hamburger");
+        const navLinks = document.getElementById("nav-links");
+
+        hamburger.addEventListener("click", () => {
+            navLinks.classList.toggle("show-menu");
+        });
+    </script>
+
 </body>
 </html>
-
-
