@@ -111,15 +111,33 @@ body {
     max-width: 800px;
     border-radius: 0;
     box-shadow: none !important;
-    text-align: center;
+    text-align: initial; /* cambiado para que solo la imagen se centre */
     border: none;
 }
 
 /* ======= CONTENEDOR DE IMAGEN ======= */
 .img-container {
-    overflow: visible; /* permite que la imagen crezca fuera del contenedor */
+    display: inline-block; /* evita que el contenedor crezca */
+    overflow: visible;      /* deja que la imagen sobresalga */
 }
 
+/* ======= IMAGEN CON ANIMACIÓN ======= */
+.index-img, .main-img {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: contain;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.index-img:hover, .main-img:hover {
+    transform: scale(1.05); /* solo la imagen hace zoom */
+    box-shadow: 0 0 25px rgba(108,117,125,0.8);
+}
+
+/* ======= RESTO DEL CSS SE MANTIENE IGUAL ======= */
 /* ======= CONTENEDOR DE BOTONES ======= */
 .botones-container {
     display: flex;
@@ -263,22 +281,6 @@ body {
     border-radius: 10px;
     object-fit: contain;
     transition: box-shadow 0.4s ease;
-}
-
-/* ======= EFECTO SOLO EN LA IMAGEN ======= */
-.index-img, .main-img {
-    width: 100%;
-    height: auto;
-    max-height: 400px;
-    object-fit: contain;
-    display: block;
-    margin: 0 auto;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-.index-img:hover, .main-img:hover {
-    transform: scale(1.05); /* solo la imagen hace zoom */
-    box-shadow: 0 0 25px rgba(108,117,125,0.8);
 }
 
 /* ======= TEXTO TARJETAS ======= */
