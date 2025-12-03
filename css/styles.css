@@ -115,6 +115,11 @@ body {
     border: none;
 }
 
+/* ======= CONTENEDOR DE IMAGEN ======= */
+.img-container {
+    overflow: visible; /* permite que la imagen crezca fuera del contenedor */
+}
+
 /* ======= CONTENEDOR DE BOTONES ======= */
 .botones-container {
     display: flex;
@@ -260,7 +265,7 @@ body {
     transition: box-shadow 0.4s ease;
 }
 
-/* ======= EFECTO RESPLANDOR SOLO AL PASAR EL MOUSE ======= */
+/* ======= EFECTO SOLO EN LA IMAGEN ======= */
 .index-img, .main-img {
     width: 100%;
     height: auto;
@@ -268,10 +273,11 @@ body {
     object-fit: contain;
     display: block;
     margin: 0 auto;
-    transition: box-shadow 0.4s ease;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .index-img:hover, .main-img:hover {
+    transform: scale(1.05); /* solo la imagen hace zoom */
     box-shadow: 0 0 25px rgba(108,117,125,0.8);
 }
 
