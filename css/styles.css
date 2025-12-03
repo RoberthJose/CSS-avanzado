@@ -91,13 +91,6 @@ body {
 .nav-menu li a:hover::after { width: 100%; }
 .nav-menu li.active a { font-weight: bold; }
 
-/* ======= ENCABEZADO DE PÁGINA ======= */
-.page-header {
-    padding: 25px 15px;
-    margin-top: 0;
-    text-align: center;
-}
-
 /* ======= CONTENIDO PRINCIPAL ======= */
 .content {
     display: flex;
@@ -111,22 +104,24 @@ body {
     max-width: 800px;
     border-radius: 0;
     box-shadow: none !important;
-    text-align: initial; /* cambiado para que solo la imagen se centre */
+    text-align: center; /* ahora todo dentro del box está centrado */
     border: none;
 }
 
 /* ======= CONTENEDOR DE IMAGEN ======= */
 .img-container {
-    display: inline-block; /* evita que el contenedor crezca */
-    overflow: visible;      /* deja que la imagen sobresalga */
+    display: flex;
+    justify-content: center; /* centra la imagen horizontalmente */
+    align-items: center;     /* centra la imagen verticalmente si hay altura */
+    overflow: visible;       /* permite que la imagen sobresalga */
 }
 
 /* ======= IMAGEN CON ANIMACIÓN ======= */
 .index-img, .main-img {
     display: block;
-    margin: 0 auto;
     width: 100%;
     height: auto;
+    max-width: 400px;
     max-height: 400px;
     object-fit: contain;
     transition: transform 0.4s ease, box-shadow 0.4s ease;
@@ -138,6 +133,7 @@ body {
 }
 
 /* ======= RESTO DEL CSS SE MANTIENE IGUAL ======= */
+
 /* ======= CONTENEDOR DE BOTONES ======= */
 .botones-container {
     display: flex;
@@ -321,3 +317,5 @@ body {
 
     .tarjetas-container { grid-template-columns: 1fr; padding: 20px; }
 }
+
+
