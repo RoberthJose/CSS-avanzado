@@ -310,15 +310,13 @@ body {
     /* Tarjetas responsive: 1 columna */
     .tarjetas-container { grid-template-columns: 1fr; padding: 20px; }
 }
+
 /* ======= AJUSTE DE IMAGEN INDEX ======= */
-.index-img {
+.index-img, .main-img {
     width: 100%;
-    height: auto;        /* Mantiene proporción */
-    max-height: 400px;   /* Ajusta según tu preferencia */
-    object-fit: contain;  /* Evita que se salga del contenedor */
+    height: auto;
+    max-height: 400px;
+    object-fit: contain;
     display: block;
     margin: 0 auto;
 }
-
-
-
