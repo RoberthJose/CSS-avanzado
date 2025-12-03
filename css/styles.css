@@ -104,16 +104,16 @@ body {
     max-width: 800px;
     border-radius: 0;
     box-shadow: none !important;
-    text-align: center; /* ahora todo dentro del box está centrado */
+    text-align: center; 
     border: none;
 }
 
 /* ======= CONTENEDOR DE IMAGEN ======= */
 .img-container {
     display: flex;
-    justify-content: center; /* centra la imagen horizontalmente */
-    align-items: center;     /* centra la imagen verticalmente si hay altura */
-    overflow: visible;       /* permite que la imagen sobresalga */
+    justify-content: center;
+    align-items: center;
+    overflow: visible;
 }
 
 /* ======= IMAGEN CON ANIMACIÓN ======= */
@@ -128,11 +128,9 @@ body {
 }
 
 .index-img:hover, .main-img:hover {
-    transform: scale(1.05); /* solo la imagen hace zoom */
+    transform: scale(1.05);
     box-shadow: 0 0 25px rgba(108,117,125,0.8);
 }
-
-/* ======= RESTO DEL CSS SE MANTIENE IGUAL ======= */
 
 /* ======= CONTENEDOR DE BOTONES ======= */
 .botones-container {
@@ -270,13 +268,21 @@ body {
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
+/* ======= ANIMACIONES DE TARJETAS ======= */
+.anim-tarjeta-elevacion:hover { transform: translateY(-10px) scale(1.03); box-shadow: 0 12px 25px rgba(0,0,0,0.3); }
+.anim-tarjeta-resplandor:hover { box-shadow: 0 0 20px rgba(108,117,125,0.9); }
+.anim-tarjeta-pulse:hover { animation: pulse 0.6s; }
+.anim-tarjeta-vibracion:hover { animation: vibrar 0.4s; }
+.anim-tarjeta-zoom:hover { transform: scale(1.08); box-shadow: 0 0 25px rgba(0,0,0,0.25); }
+.anim-tarjeta-tooltip:hover { transform: translateY(-5px) scale(1.05); box-shadow: 0 0 20px rgba(0,123,255,0.6); }
+
 .tarjeta-card img {
     max-width: 100%;
     max-height: 180px;
     margin-bottom: 12px;
     border-radius: 10px;
     object-fit: contain;
-    transition: box-shadow 0.4s ease;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 /* ======= TEXTO TARJETAS ======= */
@@ -317,5 +323,3 @@ body {
 
     .tarjetas-container { grid-template-columns: 1fr; padding: 20px; }
 }
-
-
