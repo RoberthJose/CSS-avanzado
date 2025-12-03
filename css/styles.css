@@ -319,4 +319,7 @@ body {
     object-fit: contain;
     display: block;
     margin: 0 auto;
+    /* Animación pulse continua */
+    animation: pulse 2s infinite;
 }
+
