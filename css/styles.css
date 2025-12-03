@@ -304,7 +304,7 @@ body {
     .tarjetas-container { grid-template-columns: 1fr; padding: 20px; }
 }
 
-/* ======= AJUSTE DE IMAGEN INDEX CON ANIMACIÓN ======= */
+/* ======= AJUSTE DE IMAGEN INDEX CON ANIMACIÓN AL PASAR EL MOUSE ======= */
 .index-img, .main-img {
     width: 100%;
     height: auto;
@@ -312,14 +312,11 @@ body {
     object-fit: contain;
     display: block;
     margin: 0 auto;
-
-    /* Animación al cargar */
-    animation: fadeInZoom 1s ease forwards, pulse 2s infinite;
-    opacity: 0; /* empieza invisible para fadeInZoom */
+    transition: transform 0.6s ease; /* suaviza la animación */
 }
 
-/* Animación fade + zoom */
-@keyframes fadeInZoom {
-    0% { opacity: 0; transform: scale(0.95); }
-    100% { opacity: 1; transform: scale(1); }
+/* Animación al pasar el mouse */
+.index-img:hover, .main-img:hover {
+    animation: pulse 0.6s; /* animación de pulso definida en tu CSS */
 }
+
