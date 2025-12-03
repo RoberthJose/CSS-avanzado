@@ -170,7 +170,7 @@ body {
 .anim-advertencia:hover { transform: scale(1.08) rotate(1deg); box-shadow:0 0 18px rgba(255,193,7,0.9); filter: brightness(1.1); }
 
 /* ======= FORMULARIO ======= */
-.content-section { max-width: 600px; margin: 40px auto; background: #fff; padding: 30px 25px; border-radius:12px; box-shadow:0 5px 15px rgba(0,0,0,0.15);}
+.content-section { max-width: 600px; margin: 40px auto; background: #fff; padding: 30px 25px; border-radius:12px; box-shadow:0 5px 15px rgba(0,0,0,0.15); }
 .ui-form { display:flex; flex-direction:column; gap:15px; font-size:16px; }
 .ui-form label { font-weight:bold; color:#333; }
 .ui-form input { padding:10px 12px; border-radius:6px; border:1px solid #ccc; outline:none; transition:0.3s ease; font-size:15px; }
@@ -236,7 +236,6 @@ body {
     justify-items: center;
 }
 
-/* Tarjetas individuales */
 .tarjeta-card {
     background: #fff;
     border-radius: 12px;
@@ -252,7 +251,6 @@ body {
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* Imagen dentro de tarjeta */
 .tarjeta-card img {
     max-width: 100%;
     max-height: 180px;
@@ -262,7 +260,6 @@ body {
     transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-/* Animaciones específicas para tus tarjetas */
 .anim-tarjeta-elevacion:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.3); }
 .anim-tarjeta-resplandor:hover { box-shadow: 0 0 20px rgba(108,117,125,0.7); }
 .anim-tarjeta-pulse:hover { animation: pulse 0.6s; }
@@ -270,7 +267,6 @@ body {
 .anim-tarjeta-zoom:hover { transform: scale(1.05); }
 .anim-tarjeta-tooltip:hover { transform: translateY(-3px) scale(1.03); box-shadow:0 6px 15px rgba(0,0,0,0.25); }
 
-/* Texto de tarjeta */
 .tarjeta-card h3 { min-height: 40px; margin-bottom: 8px; font-size: 18px; color: #222; }
 .tarjeta-card p { min-height: 50px; margin-bottom: 12px; font-size: 15px; color: #555; line-height: 1.4; }
 
@@ -294,7 +290,6 @@ body {
 
 /* ======= MEDIA QUERIES ======= */
 @media (max-width: 992px) {
-    /* Navbar responsive */
     .nav-container { display: flex; }
     .hamburger { display: block; }
     .nav-menu {
@@ -306,12 +301,10 @@ body {
     }
     .nav-menu.show { max-height: 1000px; }
     .nav-menu li a { padding: 10px 0; text-align:center; }
-
-    /* Tarjetas responsive: 1 columna */
     .tarjetas-container { grid-template-columns: 1fr; padding: 20px; }
 }
 
-/* ======= AJUSTE DE IMAGEN INDEX ======= */
+/* ======= AJUSTE DE IMAGEN INDEX CON ANIMACIÓN ======= */
 .index-img, .main-img {
     width: 100%;
     height: auto;
@@ -319,7 +312,14 @@ body {
     object-fit: contain;
     display: block;
     margin: 0 auto;
-    /* Animación pulse continua */
-    animation: pulse 2s infinite;
+
+    /* Animación al cargar */
+    animation: fadeInZoom 1s ease forwards, pulse 2s infinite;
+    opacity: 0; /* empieza invisible para fadeInZoom */
 }
 
+/* Animación fade + zoom */
+@keyframes fadeInZoom {
+    0% { opacity: 0; transform: scale(0.95); }
+    100% { opacity: 1; transform: scale(1); }
+}
