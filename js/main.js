@@ -59,13 +59,14 @@ modals.forEach(modal => {
 });
 
 // ============================
-// ACORDEÓN
+// ACORDEÓN LIBRE (sin orden)
 // ============================
 const acordeonButtons = document.querySelectorAll(".acordeon-btn");
 
 acordeonButtons.forEach((btn, index) => {
     btn.addEventListener("click", () => {
         const content = btn.nextElementSibling;
+
         const animaciones = [
             "blur-in",
             "flip-vertical",
@@ -75,31 +76,27 @@ acordeonButtons.forEach((btn, index) => {
             "stretch-opacity"
         ];
 
-        // Cerrar otros acordeones
-        document.querySelectorAll(".acordeon-contenido").forEach(c => {
-            if (c !== content) {
-                c.style.height = "0";
-                c.classList.remove("show", ...animaciones);
-                c.previousElementSibling.classList.remove("active");
-            }
-        });
+        // Ya NO cerramos los otros acordeones.
+        const isOpen = content.classList.contains("show");
 
-        // Alternar acordeón actual
-        if (content.style.height && content.style.height !== "0px") {
+        if (isOpen) {
+            // Cerrar solo este
             content.style.height = "0";
             content.classList.remove("show", ...animaciones);
             btn.classList.remove("active");
         } else {
+            // Abrir solo este
             content.classList.remove(...animaciones);
-            void content.offsetWidth; // reinicia animación
-            content.classList.add("show");
+            void content.offsetWidth;
+
             btn.classList.add("active");
+            content.classList.add("show");
 
             const animacion = animaciones[index % animaciones.length];
             content.classList.add(animacion);
+
             content.style.height = content.scrollHeight + "px";
 
-            // Ajuste dinámico si el contenido cambia
             const resizeObserver = new ResizeObserver(() => {
                 content.style.height = content.scrollHeight + "px";
             });
@@ -107,3 +104,4 @@ acordeonButtons.forEach((btn, index) => {
         }
     });
 });
+
