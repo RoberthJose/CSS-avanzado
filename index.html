@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Componentes de Interfaz de Usuario (UI)</title>
+    <title>Inicio – Prototipo WCAG 2.2</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
     <!-- Encabezado superior -->
     <header class="top-header">
-        Componentes de Interfaz de Usuario (UI)
+        Prototipo Front-End – WCAG 2.2
     </header>
 
-    <!-- Barra de navegación -->
+    <!-- Barra de navegación antigua -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">UI</div>
@@ -21,36 +21,58 @@
         </div>
 
         <ul class="nav-menu">
-            <li class="active"><a href="index.html">Inicio</a></li>
-            <li><a href="botones.html">Botones</a></li>
-            <li><a href="tarjetas.html">Tarjetas</a></li>
-            <li><a href="formulario.html">Formulario</a></li>
-            <li><a href="modal.html">Modal</a></li>
-            <li><a href="acordeon.html">Acordeón</a></li>
-            <li><a href="tooltip.html">Tooltip</a></li>
+            <li class="active"><a href="index.html">Bienvenida</a></li>
+            <li><a href="login.html">Inicio de sesión</a></li>
+            <li><a href="dashboard.html">Recordatorios</a></li>
+            <li><a href="mis-cursos.html">Mis cursos</a></li>
         </ul>
     </nav>
 
     <!-- Contenedor del contenido -->
     <main class="content">
-        <div class="box">
-            <!-- Contenedor de imagen -->
-            <div class="img-container">
-                <img src="img/componentes.png" alt="Componentes UI" class="main-img index-img">
-            </div>
+        <h1 class="main-title">Bienvenido a Mi Aplicación</h1>
 
-            <!-- Texto de descripción -->
-            <p class="description">
-                Los componentes de la interfaz de usuario (UI) incluyen controles de entrada 
-                (botones, campos de texto), elementos de navegación (menús, barras), y componentes 
-                informativos (iconos, notificaciones). Estos elementos trabajan juntos para permitir 
-                la interacción del usuario con un sistema.
-            </p>
-        </div>
+        <figure class="figure-logo">
+            <img id="logo" src="assets/img/logo.png" alt="Logo de la aplicación StudyTasks" class="main-img index-img">
+            <figcaption class="figcaption">Logo oficial de la aplicación</figcaption>
+        </figure>
+
+        <p class="description">
+            Esta es una aplicación prototipo diseñada siguiendo las pautas de accesibilidad WCAG 2.2.
+            Aquí podrás gestionar tus tareas y recordatorios de manera simple y accesible.
+        </p>
     </main>
 
-    <!-- JS para hamburguesa, modales y acordeón -->
-    <script src="js/main.js" defer></script>
+    <!-- Pie de página -->
+    <hr class="footer-line">
+    <footer class="footer">
+        <p class="footer-text">© 2025 - Prototipo académico accesible</p>
+    </footer>
+
+    <!-- Botón modo oscuro -->
+    <button id="toggle-dark" aria-label="Cambiar modo oscuro">🌙</button>
+
+    <!-- JS para hamburguesa y modo oscuro -->
+    <script>
+        // Modo oscuro
+        const toggleDark = document.getElementById('toggle-dark');
+        if(localStorage.getItem('dark-mode') === 'true') {
+            document.body.classList.add('dark-mode');
+        }
+        toggleDark.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            localStorage.setItem('dark-mode', document.body.classList.contains('dark-mode'));
+        });
+
+        // Menú hamburguesa antiguo
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active'); // mostrar/ocultar menú
+        });
+    </script>
 
 </body>
 </html>
+
